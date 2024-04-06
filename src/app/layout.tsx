@@ -1,6 +1,10 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import { Providers } from "./providers";
+import Navbar from "./_components/Navbar";
+import { Flex } from "@chakra-ui/react";
+import { CenterStorageProvider } from "../context/CenterStorage";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,7 +20,21 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <Providers>
+          <CenterStorageProvider>
+            <Navbar />
+            <Flex
+              p={{ base: "16px", md: "32px" }}
+              w="100%"
+              maxW="1280px"
+              margin={"auto"}
+            >
+              {children}
+            </Flex>
+          </CenterStorageProvider>
+        </Providers>
+      </body>
     </html>
   );
 }
