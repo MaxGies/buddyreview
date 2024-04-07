@@ -7,7 +7,7 @@ interface Restaurants {
   name: string;
   description: string;
   photoList: string[];
-  isAlrBook: boolean;
+  isAlrBook?: boolean;
 }
 
 export default function ResCard({

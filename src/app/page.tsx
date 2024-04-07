@@ -5,7 +5,8 @@ import ResCard from "./_components/ResCard";
 import { useCenterStorageState } from "../context/CenterStorage";
 
 export default function Home() {
-  const { resList, resAll, actions } = useCenterStorageState();
+  const { resList, resAll, actions, bookingList } = useCenterStorageState();
+  console.log(bookingList);
 
   return (
     <Flex
@@ -18,14 +19,18 @@ export default function Home() {
     >
       {resAll.length > 0 ? (
         resList.length > 0 ? (
-          resList.map((res, index) => (
+          resList.map((res) => (
             <ResCard
               key={res.id}
               resId={res.id}
               name={res.name}
               description={res.description}
               photoList={res.photo}
-              isAlrBook={index % 2 == 0}
+              isAlrBook={
+                bookingList.length > 0
+                  ? bookingList.find((book) => book.resId === res.id) && true
+                  : false
+              }
             />
           ))
         ) : (

@@ -70,7 +70,7 @@ export default function BookingForm({ params }: Params) {
       resId: params.restaurant,
     });
     actions.updateBooking();
-    router.push("/manage");
+    router.push("/");
   }, [name, amountPeople, bookingDate, bookingTime, params.restaurant]);
 
   useEffect(() => {
