@@ -3,8 +3,8 @@
 import { Flex, Heading, Text, Box } from "@chakra-ui/react";
 import Link from "next/link";
 import { deleteBooking } from "../_actions/action";
-import ManageCard from "../_components/ManageCard";
-import { useCenterStorageState } from "../../context/CenterStorage";
+import ManageCard from "@/components/ManageCard";
+import { useCenterStorageState } from "@/context/CenterStorage";
 
 export default function ManageBooking() {
   const { actions, bookingList, resAll } = useCenterStorageState();

@@ -12,7 +12,7 @@ import {
 } from "@chakra-ui/react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useCenterStorageState } from "../../context/CenterStorage";
+import { useCenterStorageState } from "@/context/CenterStorage";
 
 export default function Navbar() {
   const pathname = usePathname();

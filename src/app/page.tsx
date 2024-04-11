@@ -1,8 +1,8 @@
 "use client";
 
 import { Flex, Spinner, Heading, Button } from "@chakra-ui/react";
-import ResCard from "./_components/ResCard";
-import { useCenterStorageState } from "../context/CenterStorage";
+import ResCard from "@/components/ResCard";
+import { useCenterStorageState } from "@/context/CenterStorage";
 
 export default function Home() {
   const { resList, resAll, actions, bookingList } = useCenterStorageState();

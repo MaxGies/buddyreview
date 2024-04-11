@@ -1,16 +1,12 @@
 import Image from "next/image";
 import { Flex, Box, Heading, Text } from "@chakra-ui/react";
 import Link from "next/link";
+import { getRestaurant } from "../_actions/action";
 
 interface Params {
   params: {
     restaurant: string;
   };
-}
-
-async function getRestaurant(resId: string) {
-  const result = await fetch(`http://localhost:3000/api/restaurant/${resId}`);
-  return result.json();
 }
 
 export default async function Restaurant({ params }: Params) {
